@@ -1,3 +1,5 @@
+"use strict"
+
 const colorList = {
   black: [30, 39],
   red: [31, 39],
@@ -28,12 +30,9 @@ class Logger {
         this.spaces = spaces
     }
 
-    error(err, msg = '') {
+    error(msg = '', err) {
         if (typeof msg !== 'string') {
             throw new TypeError('MSG is not type string')
-        }
-        if (typeof err !== 'object') {
-            throw new TypeError('err is not type Error')
         }
         console.log(`${'\x1b['}${this.errColor[0]}${'m'}${msg}${err}${'\x1b['}${this.errColor[1]}${'m'}`) 
     }
@@ -52,8 +51,6 @@ class Logger {
     }
 }
 
+Object.defineProperty(exports, "__esModule", {value: true})
 
-module.export = {
-    Logger,
-    colorList
-}
+exports.default = { Logger, colorList }
