@@ -33,7 +33,12 @@ interface ListColors {
     gray: ColorType,
     grey: ColorType,
 }
+declare const _Logger: _Logger.TP
+declare namespace _Logger {
+    export interface TP {
+        Logger: Logger,
+        colorList: ListColors
+    }
+}
 
-export const _default: { Logger: Logger, colorList: ListColors }
-
-export default _default
+export = _Logger;

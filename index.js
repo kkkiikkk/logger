@@ -15,13 +15,13 @@ const colorList = {
 
 class Logger {
 
-    errColor;
+    #errColor;
 
-    infoColor;
+    #infoColor;
 
-    logColor;
+    #logColor;
 
-    spaces;
+    #spaces;
 
     constructor(errColor = colorList.red, infoColor = colorList.blue, logColor = colorList.green, spaces = 10) {
         this.errColor = errColor
@@ -51,6 +51,4 @@ class Logger {
     }
 }
 
-Object.defineProperty(exports, "__esModule", {value: true})
-
-exports.default = { Logger, colorList }
+module.exports = { Logger, colorList }
