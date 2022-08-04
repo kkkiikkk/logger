@@ -18,6 +18,6 @@ const logger = new Logger()
 logger.info('[INFO]')
 logger.log('[LOG]')
 logger.error('[ERROR]', 505)
-
+```
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
