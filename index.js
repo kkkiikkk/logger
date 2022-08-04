@@ -1,0 +1,59 @@
+const colorList = {
+  black: [30, 39],
+  red: [31, 39],
+  green: [32, 39],
+  yellow: [33, 39],
+  blue: [34, 39],
+  magenta: [35, 39],
+  cyan: [36, 39],
+  white: [37, 39],
+  gray: [90, 39],
+  grey: [90, 39],
+}
+
+class Logger {
+
+    errColor;
+
+    infoColor;
+
+    logColor;
+
+    spaces;
+
+    constructor(errColor = colorList.red, infoColor = colorList.blue, logColor = colorList.green, spaces = 10) {
+        this.errColor = errColor
+        this.infoColor = infoColor
+        this.logColor = logColor
+        this.spaces = spaces
+    }
+
+    error(err, msg = '') {
+        if (typeof msg !== 'string') {
+            throw new TypeError('MSG is not type string')
+        }
+        if (typeof err !== 'object') {
+            throw new TypeError('err is not type Error')
+        }
+        console.log(`${'\x1b['}${this.errColor[0]}${'m'}${msg}${err}${'\x1b['}${this.errColor[1]}${'m'}`) 
+    }
+
+    info(msg) {
+        let spaces = '';
+        for (let i  = 1; i <= this.spaces; i++) {
+            spaces = spaces + ' '
+        }
+        console.info(`${'\x1b['}${this.infoColor[0]}${'m'}[${new Date().toLocaleString('en-US', { timezone: 'UTC' })}]${spaces}${msg}${'\x1b['}${this.infoColor[1]}${'m'}`)
+    }
+
+
+    log(msg) {
+        console.log(`${'\x1b['}${this.logColor[0]}${'m'}${msg}${'\x1b['}${this.logColor[1]}${'m'}`)
+    }
+}
+
+
+module.export = {
+    Logger,
+    colorList
+}

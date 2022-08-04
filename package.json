@@ -1,0 +1,23 @@
+{
+  "name": "logger",
+  "version": "0.1.0",
+  "description": "node js logger",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkkiikkk/logger.git"
+  },
+  "keywords": [
+    "nodejs",
+    "logger"
+  ],
+  "author": "ruddnovskiy@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kkkiikkk/logger/issues"
+  },
+  "homepage": "https://github.com/kkkiikkk/logger#readme"
+}
