@@ -32,9 +32,9 @@ class Logger {
 
     error(msg = '', err) {
         if (typeof msg !== 'string') {
-            throw new TypeError('MSG is not type string')
+            throw new TypeError('MSG is not of type string')
         }
-        console.log(`${'\x1b['}${this.errColor[0]}${'m'}${msg}${err}${'\x1b['}${this.errColor[1]}${'m'}`) 
+        console.log(`${'\x1b['}${this.errColor[0]}${'m'}${msg}${err}${'\x1b['}${this.errColor[1]}${'m'}`)
     }
 
     info(msg) {
